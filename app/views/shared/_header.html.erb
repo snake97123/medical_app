@@ -1,9 +1,12 @@
-<h1>お薬相談室</h1>
-<div>小児お薬相談室</div>
    <header class='top-page-header'>
-     <div class='nav'>
+   <h1>お薬相談室</h1>
+      <div class='nav'>
        <ul class='list-right'> 
-        <li><%=link_to '新規登録', '#', class:'sign-in'%></li>
-        <li><%=link_to 'ログイン', '#', class:'log-in'%></li>
-        <li><%=link_to 'ログアウト', '#', class:'log-out'%></li>
-        </ul>
+        <% if user_signed_in? %>
+        <%= "ようこそ#{current_user.nickname}さん" %>
+         <li><%=link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'log-out'%></li>
+        <% else %> 
+         <li><%=link_to '新規登録',  new_user_registration_path, class:'sign-in'%></li>
+         <li><%=link_to 'ログイン',  new_user_session_path, class:'log-in'%></li>
+        <% end %> 
+       </ul>
