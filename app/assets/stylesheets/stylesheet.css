@@ -1,3 +1,19 @@
 .top-page-header{
   background-color: aqua;
 }
+.list-right{
+  display: flex;
+  justify-content: flex-end;
+}
+.log-in{
+  padding: 20px;
+}
+.question{
+  padding: 20px;
+}
+.question-list{
+  height: 500px;
+}
+.log-out{
+  padding-left: 20px;
+}
