@@ -15,9 +15,9 @@
 
 ## Questions テーブル
 
-|  Column            |  Type        |  Options                                     |
-| ------------------ | ------------ | -------------------------------------------- |
-| title              | string       | null: false                                  |
+|  Column            |  Type       |  Options                                      |
+| ------------------ | ------------| --------------------------------------------- |
+| title              | string       | null: false                                  |                
 | content            | string       | null: false                                  |
 | user               | reference    | null: false, foreign_key: true               |
 
