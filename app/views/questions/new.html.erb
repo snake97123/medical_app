@@ -1,0 +1,17 @@
+<%= render "shared/header" %>
+<%= form_with(model: @question, local: true) do |f|%>
+  <div class="field">
+    <%= f.label :title, "質問" %><br />
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content, "質問内容" %><br />
+    <%= f.text_field :content %>
+  </div>
+
+  <div class="question-btn-contents">
+     <%= f.submit "質問する", class:"question-btn" %>
+     <%= link_to "トップページに戻る", root_path, class:"back-btn" %>
+  </div>
+<% end %>

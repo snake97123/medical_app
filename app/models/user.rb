@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
   validates :phone_number, presence: true, format: { with: /\A^(0{1}\d{9,10})$\z/ }
+
+  has_many  :questions
 end
