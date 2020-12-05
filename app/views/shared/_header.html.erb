@@ -5,7 +5,7 @@
         <% if user_signed_in? %>
         <%= "ようこそ#{current_user.nickname}さん" %>
          <li><%=link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'log-out'%></li>
-         <li><%=link_to '質問する', '#', class: 'question'%>
+         <li><%=link_to '質問する', new_question_path, class: 'question'%>
         <% else %> 
          <li><%=link_to '新規登録',  new_user_registration_path, class:'sign-in'%></li>
          <li><%=link_to 'ログイン',  new_user_session_path, class:'log-in'%></li>
