@@ -17,3 +17,7 @@
 .log-out{
   padding-left: 20px;
 }
+
+.list{
+  list-style: none;
+}
