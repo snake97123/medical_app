@@ -3,10 +3,9 @@
 <div class="question-lists">質問一覧</div>
  <% @questions.each do |question|%>
   <li class="list">
-   <% if user_signed_in? %>
-     <%= link_to  "#{question.title}" %>
+     <%= link_to  "#{question.title}", question_path(question.id)  %>
      <%=l question.created_at %>
-   <% end %>
+     <%=l question.updated_at %>
   <% end %>
 </body>
 <%= render "shared/footer"%>

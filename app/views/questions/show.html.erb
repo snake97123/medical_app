@@ -1,0 +1,15 @@
+<div class="inner">
+ <div class="question_wrapper">
+  <p class="question_hedding">
+    <%= @question.title %>
+    <%= @question.content%>
+  </p>
+  </div>
+</div>
+
+<div class= "question_manage">
+  <% if user_signed_in? %>
+   <%= link_to "編集する", edit_question_path, class:"question_btn" %>
+   <%= link_to "削除する", question_path, method: :delete, class:"question_btn" %>
+  <% end %>
+  </div>
