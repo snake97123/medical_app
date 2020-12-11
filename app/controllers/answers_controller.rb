@@ -4,7 +4,6 @@ class AnswersController < ApplicationController
     end
 
     def create
-      # binding.pry
       @answer = Answer.new(answer_params)
       if @answer.save
         redirect_to question_path(@answer.question)

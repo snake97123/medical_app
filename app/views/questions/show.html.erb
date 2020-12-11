@@ -20,5 +20,9 @@
    <%= link_to "削除する", question_path, method: :delete, class:"question_btn" %>
    <%= link_to "回答する", new_question_answer_path(@question.id), class:"answer_btn" %>
   <% end %>
+  <% @answers.each do |answer| %>
+  <li class="answer_list">
+   <%= answer.text %>
+   <% end %>
   <%= render "shared/footer"%>
   </div>
