@@ -1,13 +1,19 @@
 <%= render "shared/header" %>
+<div class="wrapper">
 <body>
-<div class="question-lists">質問一覧</div>
- <% @questions.each do |question|%>
-  <li class="list">
-     <%= link_to  "#{question.title}", question_path(question.id)  %>
-     <%=l question.created_at %>
-     <%=l question.updated_at %>
-  <% end %>
+    <div class="question-lists">質問一覧
+     <% @questions.each do |question|%>
+      <li class="list">
+         <%= link_to  "#{question.title}", question_path(question.id)  %>
+      <h1 class="question-list">
+           質問した日
+         <%=l question.created_at %>
+          <%# <div>更新:</div>
+         <%=l question.updated_at %> 
+      </h1>
+     <% end %>
+    </div>
 </body>
 <%= render "shared/footer"%>
-
+</div>
 

@@ -1,15 +1,24 @@
 <div class="inner">
- <div class="question_wrapper">
-  <p class="question_hedding">
+   <h1 class="title">お薬相談室</h1>
+ <div class="question-wrapper">
+  <ul>
+    <li>
+    質問：
     <%= @question.title %>
+    </li>
+    <li>
+    質問内容：
     <%= @question.content%>
-  </p>
+    </li>
+  </ul>
   </div>
 </div>
 
-<div class= "question_manage">
+<div class= "question-manage">
   <% if user_signed_in? %>
    <%= link_to "編集する", edit_question_path, class:"question_btn" %>
    <%= link_to "削除する", question_path, method: :delete, class:"question_btn" %>
+   <%= link_to "回答する", "#" %>
   <% end %>
+  <%= render "shared/footer"%>
   </div>

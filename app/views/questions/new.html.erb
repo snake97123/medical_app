@@ -1,4 +1,6 @@
-<%= render "shared/header" %>
+<div class="contents row">
+<h1 class="title">お薬相談室</h1>
+  <div class="container">
 <%= form_with(model: @question, local: true) do |f|%>
   <div class="field">
     <%= f.label :title, "質問" %><br />
@@ -14,4 +16,6 @@
      <%= f.submit "質問する", class:"question-btn" %>
      <%= link_to "トップページに戻る", root_path, class:"back-btn" %>
   </div>
+ </div>
+</div>
 <% end %>
