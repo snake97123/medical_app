@@ -8,4 +8,5 @@ class User < ApplicationRecord
   validates :phone_number, presence: true, format: { with: /\A^(0{1}\d{9,10})$\z/ }
 
   has_many  :questions
+  has_many  :answers
 end

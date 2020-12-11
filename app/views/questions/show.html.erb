@@ -18,7 +18,7 @@
   <% if user_signed_in? %>
    <%= link_to "編集する", edit_question_path, class:"question_btn" %>
    <%= link_to "削除する", question_path, method: :delete, class:"question_btn" %>
-   <%= link_to "回答する", "#" %>
+   <%= link_to "回答する", new_question_answer_path(@question.id), class:"answer_btn" %>
   <% end %>
   <%= render "shared/footer"%>
   </div>
