@@ -1,5 +1,7 @@
 <div class="inner">
-   <h1 class="title">お薬相談室</h1>
+   <h1 class="title">
+     <%= link_to "お薬相談室", root_path%>
+   </h1>
  <div class="question-wrapper">
   <ul>
     <li>
@@ -20,9 +22,16 @@
    <%= link_to "削除する", question_path, method: :delete, class:"question_btn" %>
    <%= link_to "回答する", new_question_answer_path(@question.id), class:"answer_btn" %>
   <% end %>
-  <% @answers.each do |answer| %>
-  <li class="answer_list">
-   <%= answer.text %>
-   <% end %>
-  <%= render "shared/footer"%>
   </div>
+  <div class="answer-lists">回答一覧
+  <% @answers.each do |answer| %>
+  <li class="answer-list">
+   <%= answer.text %>
+   </li>
+   <li class="answer-list-name">
+   <%= answer.user.nickname%>
+   </li>
+   <% end %>
+   </div>
+  <%= render "shared/footer"%>
+  

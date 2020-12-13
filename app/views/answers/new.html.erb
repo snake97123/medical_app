@@ -1,8 +1,10 @@
-<h1 class="title">お薬相談室</h1>
+  <h1 class="title">
+  <%= link_to "お薬相談室", root_path%>
+  </h1>
   <%= form_with(model:@answer,url: question_answers_path, local: true) do |f|%>
   <div class="field">
     <%= f.label :text, "回答" %><br />
-    <%= f.text_field :text %>
+    <%= f.text_area :text,size:"40x5"%>
   </div>
 
   <div class="question-btn-contents">
@@ -10,4 +12,3 @@
   </div>  
   <% end %>
 
-<%= render "shared/footer"%>

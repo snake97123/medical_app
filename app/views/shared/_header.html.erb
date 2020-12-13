@@ -1,5 +1,7 @@
    <header class='top-page-header'>
-   <h1 class="title">お薬相談室</h1>
+   <h1 class="title">
+     <%= link_to "お薬相談室", root_path%>
+   </h1>   
       <div class='header-nav'>
        <ul class='list-right'> 
         <% if user_signed_in? %>
