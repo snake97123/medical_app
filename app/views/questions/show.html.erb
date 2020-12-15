@@ -31,7 +31,7 @@
    <li class="answer-list-name">
    <%= answer.user.nickname%>
    <%= link_to "編集する",edit_question_answer_path(@question, answer) , class:"answer-edit-btn" %>
-   <%= link_to "削除する", "#", class:"answer-delete-btn"%>
+   <%= link_to "削除する",  question_answer_path(@question, answer),method: :delete, class:"answer-delete-btn"%>
    </li>
    <% end %>
    </div>
