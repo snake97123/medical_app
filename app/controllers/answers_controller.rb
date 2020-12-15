@@ -1,4 +1,6 @@
 class AnswersController < ApplicationController
+    before_action :move_to_index, only: [:new, :edit]
+
     def new
       @answer = Answer.new(question_id: @question_id)
     end

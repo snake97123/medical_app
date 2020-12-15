@@ -1,4 +1,7 @@
 class QuestionsController < ApplicationController
+  before_action :authenticate_user! ,only: [:new] 
+  before_action :move_to_index, only: [:edit]
+
   def index
     @questions = Question.all
   end
