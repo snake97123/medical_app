@@ -89,6 +89,16 @@
   box-sizing: border-box;
 }
 
+.btn {
+  margin-top: 20px;
+  border-radius: 5px;
+  border: none;
+  width: 110px;
+  background-color: #4676d7;
+  color: #fff;
+}
+
+
 /* ========================================
 	詳細画面
 ========================================= */
