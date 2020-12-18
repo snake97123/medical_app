@@ -1,13 +1,14 @@
 <h1 class="title">
   <%= link_to "お薬相談室", root_path%>
-  </h1>
+</h1>
+<div class="container">
    <%= form_with(model:@answer,url: question_answer_path, local: true) do |f|%>
   <div class="field">
-    <%= f.label :text, "回答" %><br />
-    <%= f.text_area :text,size:"40x5"%>
+    <%= f.label :text, "回答", class: "answer-content" %><br />
+    <%= f.text_area :text, class: "answer-content", size:"40x5"%>
   </div>
 
   <div class="question-btn-contents">
-     <%= f.submit "回答する", class:"question-btn" %>
+     <%= f.submit "回答する", class:"btn" %>
   </div>  
   <% end %>

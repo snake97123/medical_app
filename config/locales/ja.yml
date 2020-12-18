@@ -3,7 +3,10 @@ ja:
   attributes:
    user:
     nickname: ニックネーム
-    phone_number: 電話番号   
+    phone_number: 電話番号 
+   question: 
+    title: 題名
+    content: 質問内容 
    time:
      formats:
        default: "%Y/%m/%d %H:%M:%S"
