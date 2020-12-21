@@ -34,7 +34,7 @@
    <%= answer.text %>
    </li>
    <li class="answer-list-name">
-   <% if user_signed_in %>
+   <% if user_signed_in? %>
      <% if current_user.id === answer.user_id %>
    <%= answer.user.nickname%>
    <%= link_to "編集する",edit_question_answer_path(@question, answer) , class:"answer-edit-btn" %>
