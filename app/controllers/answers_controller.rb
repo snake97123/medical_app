@@ -21,7 +21,7 @@ class AnswersController < ApplicationController
 
     def update
       @question = Question.find(params[:question_id])
-      @answer = Answer.find(params[:answer_id])
+      @answer = Answer.find(params[:id])
       if @answer.update(answer_params)
         redirect_to question_path(@question.id)
       else

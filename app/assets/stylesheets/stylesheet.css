@@ -150,3 +150,13 @@ border-top: 1px solid black;
   margin-left: 20px;
 }
 
+
+/* ========================================
+	お薬情報画面
+========================================= */
+.drug-powder{
+  margin-left: 20px;
+}
+.drug-powder{
+  line-height: 30px;
+}
