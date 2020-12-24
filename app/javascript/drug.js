@@ -1,15 +1,26 @@
-function powder(){
- const list = document.getElementById('powder-list')
+function drug(){
+ const powder_list = document.getElementById('powder-list')
  const powder = document.getElementById('powder')
- list.style.visibility = "hidden";
+ const tablet_list = document.getElementById('tablet-list')
+ const tablet = document.getElementById('tablet')
+ tablet_list.style.visibility = "hidden";
+ powder_list.style.visibility = "hidden";
  powder.addEventListener("click", () => {
-    if (list.style.visibility === "hidden"){
-         list.style.visibility = "visible"
+    if (powder_list.style.visibility === "hidden"){
+         powder_list.style.visibility = "visible"
     } else {
-          list.style.visibility = "hidden"
+          powder_list.style.visibility = "hidden"
     }
 
  });
+ tablet.addEventListener("click", () => {
+      if (tablet_list.style.visibility === "hidden"){
+           tablet_list.style.visibility = "visible"
+      } else {
+            tablet_list.style.visibility = "hidden"
+      }
+  
+   });
 }
 
-window.addEventListener('load', powder)
+window.addEventListener('load', drug)
