@@ -50,10 +50,10 @@
 |  email              | string      | null: false ,  unique:true |
 |  password           | string      | null: false                |
 |  phone_number       | string      | null: false 
+
 ### Association
-
-
-
+has_many questions
+has_many answers
 
 ## Questions テーブル
 
@@ -64,7 +64,8 @@
 | user               | reference    | null: false, foreign_key: true               |
 
 ### Association
-
+belongs_to user
+has_many answers
 
 
 
@@ -77,3 +78,5 @@
 | question           | reference   | null: false,  foreign_key:  true              |
 
 ### Association 
+belongs_to user
+belongs_to question
