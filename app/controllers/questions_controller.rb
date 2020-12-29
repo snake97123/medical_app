@@ -23,6 +23,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @answer = Answer.new
     @answers = @question.answers.includes(:user)
+    @best = Answer.select(:question_id)
   end
 
   def edit
@@ -48,6 +49,6 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:title, :content).merge(user_id: current_user.id)
+    params.require(:question).permit(:title, :content, :best_answer_id).merge(user_id: current_user.id)
   end
 end

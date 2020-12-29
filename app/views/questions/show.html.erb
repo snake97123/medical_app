@@ -23,9 +23,10 @@
       <% if current_user.id === @question.user_id%>
    <%= link_to "編集する", edit_question_path, class:"question_btn" %>
    <%= link_to "削除する", question_path, method: :delete, class:"question_btn" %>
-        <% else %>
+  
+     <% else %>
    <%= link_to "回答する", new_question_answer_path(@question.id), class:"answer_btn" %>
-    <% end %>
+   <% end  %>
   <% end %>
   </div>
   <div class="answer-lists">回答一覧
@@ -39,7 +40,17 @@
    <%= answer.user.nickname%>
    <%= link_to "編集する",edit_question_answer_path(@question, answer) , class:"answer-edit-btn" %>
    <%= link_to "削除する",  question_answer_path(@question, answer),method: :delete, class:"answer-delete-btn"%>
-      <% end %>
+      <% else %>
+      <% unless @question.best_answer_id == @best.ids[0]%>
+         <%= form_with(model: @question,url: question_path, local: true) do |form|%>
+     <%= form.hidden_field :best_answer_id, value: @best.ids[0]%>
+     <div class="action">
+     <%# <% binding.pry %> 
+     <%= form.submit '解決' %>
+       </div>  
+       <% end %>
+       <% end %>
+       <% end %>
       <% end %>
    </li>
    <% end %>
