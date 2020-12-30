@@ -1,6 +1,7 @@
-<%= render "shared/header" %>
 <div class="wrapper">
+<%= render "shared/header" %>
 <body>
+    <div class="mask">
     <div class="question-lists">質問一覧
      <% @questions.each do |question|%>
       <li class="list">
@@ -11,9 +12,11 @@
       </h1>
     
     <% end %>
-    </div>
+     </div>
+    
 </body>
-</div>
 <%= render "shared/footer"%>
+</div>
+</div>
 
 

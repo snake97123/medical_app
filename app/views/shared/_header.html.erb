@@ -1,11 +1,13 @@
    <header class='top-page-header'>
-   <h1 class="title">
-     <%= link_to "お薬相談室", root_path%>
+   <h1 class="header-title">
+     <%= link_to "お薬相談室", root_path, class:"header-title" %>
    </h1>   
       <div class='header-nav'>
        <ul class='list-right'> 
         <% if user_signed_in? %>
-        <%= "ようこそ#{current_user.nickname}さん" %>
+        <div class="name">
+        <%= "ようこそ#{current_user.nickname}さん"  %>
+        </div>
          <li><%=link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'log-out'%></li>
          <li><%=link_to '質問する', new_question_path, class: 'question'%>
         <% else %> 
