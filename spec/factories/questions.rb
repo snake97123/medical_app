@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :question do
-      title                {'熱が出ました'}
-      content              {'熱がでてさがらないです'}
+      title                {Faker::Lorem.sentence}
+      content              {Faker::Lorem.sentence}
       association :user
     end
 end

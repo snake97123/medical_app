@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :answer do
-       text                     {'大丈夫です'}
+       text                     {Faker::Lorem.sentence}
        association :user
        association :question
   end
