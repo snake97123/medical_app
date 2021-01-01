@@ -39,8 +39,8 @@
    <% if user_signed_in? %>
      <% if current_user.id === answer.user_id %>
    <%= answer.user.nickname%>
-   <%= link_to "編集する",edit_question_answer_path(@question, answer) , class:"answer-edit-btn" %>
-   <%= link_to "削除する",  question_answer_path(@question, answer),method: :delete, class:"answer-delete-btn"%>
+   <%= link_to "編集",edit_question_answer_path(@question, answer) , class:"answer-edit-btn" %>
+   <%= link_to "削除",  question_answer_path(@question, answer),method: :delete, class:"answer-delete-btn"%>
       <% else %>
       <% unless @question.best_answer_id == @best.ids[0]%>
          <%= form_with(model: @question,url: question_path, local: true) do |form|%>

@@ -7,6 +7,8 @@ ja:
    question: 
     title: 題名
     content: 質問内容 
+   answer:
+    text: 回答内容 
    time:
      formats:
        default: "%Y/%m/%d %H:%M:%S"
