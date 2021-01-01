@@ -41,6 +41,7 @@ end
       expect(page).to have_no_content('質問する')
     end
   end
+  
 RSpec.describe '質問詳細', type: :system do
   before do
     @question = FactoryBot.create(:question)
