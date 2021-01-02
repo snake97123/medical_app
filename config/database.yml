@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: medical_app_production
-  username: medical_app
-  password: <%= ENV['MEDICAL_APP_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
