@@ -186,7 +186,7 @@ RSpec.describe "回答削除", type: :system do
       expect(page).to have_content('削除')
       # 削除するとAnswerモデルのカウントが１下がることの確認
       expect{
-        find_link("削除", href:question_answer_path(@question1, @answer2) ).click
+        click_link '削除'
       }.to change{ Answer.count }.by(-1)
       # トップページに遷移する
       visit root_path
