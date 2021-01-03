@@ -1,10 +1,18 @@
 # アプリケーションの目的
-薬剤師で仕事をしている時に子供の薬の飲み方になどに関して相談を受けることが多かった。
-**→情報ページや質問投稿ページを作成することによって解決してもらう。**
-情報の蓄積
+薬剤師で仕事をしている時に子供の薬の飲み方になどに関して相談を受けることが多かった。<br>
+**→情報ページや質問投稿ページを作成することによって解決してもらう。**<br>
+情報の蓄積<br>
 **→回答される内容が増えるにつれて情報が多くなってくる。**
 
 # アカウント情報
+
+**→質問用アカウント**
+メールアドレス: demo1@com<br>
+パスワード: demo1234
+
+**→回答用アカウント**
+メールアドレス: demo2@com<br>
+パスワード: demo5678
 
 # 今後の改善箇所
 1. 検索機能を実装し探しやすいようにする。
@@ -15,15 +23,17 @@
 本当に専門的なことで困っている場合には薬剤師や医師に相談してもらうようにする必要がある。
 
 # 開発環境
- Ruby 2.6.5
- Rails 6.0.0
- HTML/CSS
- Javascript
- MySQl2 0.4.4
- VA Code
+ Ruby 2.6.5 <br>
+ Rails 6.0.0 <br>
+ HTML/CSS <br>
+ Javascript <br>
+ MySQl2 0.4.4 <br>
+ VS Code<br>
+ AWS(EC2)<br>
+
 
  # ①ユーザー登録詳細画面
-![ユーザー登録画面](https://i.gyazo.com/22f11f1c368696ef342be0fc45f8d0fd.png)
+![ユーザー登録画面](https://i.gyazo.com/870ebb644798c7ce04669f04021c80c3)
 ![ログイン画面](https://i.gyazo.com/bf0337f058b2edf1d9c633fa29bd4747.png)
  ユーザー登録を行うことが可能になる。
  ユーザー登録を行っていればログインすることが可能である。
@@ -40,6 +50,9 @@
 ![服用方法詳細ページ](https://i.gyazo.com/18ade04b02bf1803c44a687ea095bf1c.png)
 薬の飲み方に関しての情報を得ることができる。
 
+# ブラウザでログイン
+[http://3.114.15.180/](http://3.114.15.180/)
+
 # テーブル設計
 
 ## Users テーブル
@@ -52,7 +65,7 @@
 |  phone_number       | string      | null: false 
 
 ### Association
-has_many questions
+has_many questions<br>
 has_many answers
 
 ## Questions テーブル
@@ -64,7 +77,7 @@ has_many answers
 | user               | reference    | null: false, foreign_key: true               |
 
 ### Association
-belongs_to user
+belongs_to user<br>
 has_many answers
 
 
@@ -78,5 +91,5 @@ has_many answers
 | question           | reference   | null: false,  foreign_key:  true              |
 
 ### Association 
-belongs_to user
+belongs_to user<br>
 belongs_to question
