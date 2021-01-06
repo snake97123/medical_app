@@ -2,7 +2,11 @@
 <%= render "shared/header" %>
 <body>
     <div class="mask">
+
     <div class="question-lists">質問一覧
+    <div class="question-counts">
+    <%= "現在の質問数:#{@posts}"%>
+    </div>
      <% @questions.each do |question|%>
       <li class="list">
          <%= link_to  "#{question.title}", question_path(question.id)  %>

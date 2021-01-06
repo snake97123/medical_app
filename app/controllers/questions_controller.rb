@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
+    @posts = Question.all.count
   end
 
   def new
