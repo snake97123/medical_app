@@ -27,6 +27,11 @@ class QuestionsController < ApplicationController
     @best = Answer.select(:question_id)
   end
 
+  def search
+    @questions = Question.search(params[:keyword])
+  end
+  
+
   def edit
     @question = Question.find(params[:id])
   end

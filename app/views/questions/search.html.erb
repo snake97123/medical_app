@@ -1,31 +1,23 @@
 <div class="wrapper">
 <%= render "shared/header" %>
 <body>
-   
-    <div class="mask">
-    
-    <div class="question-lists">質問一覧
+   <div class="question-lists">質問一覧
     <div class="question-counts">
-    <%= "現在の質問数:#{@posts}"%>
     <%= form_with(url: search_questions_path, local:true, method: :get, class: "search-form") do |form| %>
    <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
    <%= form.submit "検索", class: "search-btn" %>
    <% end %>
-    </div>
-     <% @questions.each do |question|%>
+   </div>
+   <div class="contents row">
+    <% @questions.each do |question|  %>
       <li class="list">
          <%= link_to  "#{question.title}", question_path(question.id)  %>
       <h1 class="question-list">
            質問した日
          <%=l question.created_at %>
       </h1>
-    
-    <% end %>
-     </div>
-    
-</body>
-<%= render "shared/footer"%>
-</div>
-</div>
-
-
+     <% end %>
+    </div>
+    </body> 
+    </div>
+    <%= render "shared/footer"%>
