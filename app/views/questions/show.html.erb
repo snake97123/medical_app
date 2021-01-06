@@ -5,7 +5,10 @@
    </h1>
   <div class="container"> 
  <div class="question-wrapper">
-  <ul>
+ <% if @question.best_answer_id === @best.ids[0]%>
+ <p class="question-solution">解決しました</p>
+ <% end %>
+  <ul id="question-list">
     <li>
     質問：
     <%= @question.title %>
@@ -44,9 +47,9 @@
       <% else %>
       <% unless @question.best_answer_id == @best.ids[0]%>
          <%= form_with(model: @question,url: question_path, local: true) do |form|%>
-     <%= form.hidden_field :best_answer_id, value: @best.ids[0]%>
+     <%= form.hidden_field :best_answer_id, value: @best.ids[0] %>
      <div class="action"> 
-     <%= form.submit '解決',class:"btn" %>
+     <%= form.submit '解決',class:"btn"%>
        </div>  
        <% end %>
        <% end %>
