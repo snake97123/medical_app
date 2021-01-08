@@ -1,7 +1,6 @@
 class QuestionsController < ApplicationController
-  before_action :authenticate_user! ,only: [:new, :edit] 
+  before_action :authenticate_user!, only: [:new, :edit]
   before_action :set_question, only: [:show, :edit, :update, :destroy]
-  
 
   def index
     @questions = Question.all
@@ -30,7 +29,6 @@ class QuestionsController < ApplicationController
   def search
     @questions = Question.search(params[:keyword])
   end
-  
 
   def edit
   end
@@ -44,10 +42,9 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-     @question.destroy if current_user.id == @question.user_id
-     redirect_to root_path
+    @question.destroy if current_user.id == @question.user_id
+    redirect_to root_path
   end
-
 
   private
 
@@ -55,15 +52,12 @@ class QuestionsController < ApplicationController
     params.require(:question).permit(:title, :content, :best_answer_id).merge(user_id: current_user.id)
   end
 
-
   def set_question
-    @question =Question.find(params[:id])
+    @question = Question.find(params[:id])
   end
 
   def move_to_index
-      unless 
-        redirect_to action: :index
-      end
+    unless redirect_to action: :index
     end
   end
-
+end
