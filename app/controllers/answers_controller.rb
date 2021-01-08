@@ -1,5 +1,7 @@
 class AnswersController < ApplicationController
     before_action :authenticate_user!, only: [:new, :edit]
+    before_action :set_question, only: [:edit, :update, :destroy]
+    before_action :set_answer, only: [:edit, :uodate, :destroy]
 
     def new
       @answer = Answer.new(question_id: @question_id)
@@ -15,12 +17,10 @@ class AnswersController < ApplicationController
     end
      
     def edit
-      @question = Question.find(params[:question_id])
       @answer = Answer.find(params[:id])
     end
 
     def update
-      @question = Question.find(params[:question_id])
       @answer = Answer.find(params[:id])
       if @answer.update(answer_params)
         redirect_to question_path(@question.id)
@@ -30,7 +30,6 @@ class AnswersController < ApplicationController
     end
 
     def destroy
-       @question = Question.find(params[:question_id])
        @answer = Answer.find(params[:id])
        @answer.destroy
        redirect_to root_path
@@ -41,5 +40,14 @@ class AnswersController < ApplicationController
     def answer_params
       params.require(:answer).permit(:text).merge(user_id: current_user.id, question_id: params[:question_id])
     end
+
+    def set_question
+      @question = Question.find(params[:question_id])
+    end
+
+    def set_answer
+      @answer = Answer.find(params[:id])
+    end
+
 end
    
