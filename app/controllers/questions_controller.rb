@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :authenticate_user! ,only: [:new] 
+  before_action :authenticate_user! ,only: [:new, :edit] 
   before_action :set_question, only: [:show, :edit, :update, :destroy]
   
 
@@ -54,8 +54,16 @@ class QuestionsController < ApplicationController
   def question_params
     params.require(:question).permit(:title, :content, :best_answer_id).merge(user_id: current_user.id)
   end
-end
+
 
   def set_question
     @question =Question.find(params[:id])
   end
+
+  def move_to_index
+      unless 
+        redirect_to action: :index
+      end
+    end
+  end
+
