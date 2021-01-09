@@ -142,7 +142,9 @@
   background-color: hsl(220, 64%, 56%);
   color: #fff;
   margin-left: 20px;
+  cursor: pointer;
 }
+
 .sign-in{
   color: black;
   font-size: 20px;
