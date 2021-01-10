@@ -16,7 +16,6 @@
     <li>
     質問内容：
     <%= @question.content%>
-    </li>
   </ul>
   </div>
 </div>
@@ -44,7 +43,7 @@
    <%= answer.user.nickname%>
    <%= link_to "編集",edit_question_answer_path(@question, answer) , class:"answer-edit-btn" %>
    <%= link_to "削除",  question_answer_path(@question, answer),method: :delete, class:"answer-delete-btn"%>
-      <% else %>
+      <% elsif current_user.id === @question.user_id %>
       <% unless @question.best_answer_id == @best.ids[0]%>
          <%= form_with(model: @question,url: question_path, local: true) do |form|%>
      <%= form.hidden_field :best_answer_id, value: @best.ids[0] %>
