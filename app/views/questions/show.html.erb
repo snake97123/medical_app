@@ -35,12 +35,12 @@
   <div class="answer-lists">回答一覧
   <% @answers.each do |answer| %>
   <li class="answer-list">
+  <%= answer.user.nickname%> :
    <%= answer.text %>
    </li>
    <li class="answer-list-name">
    <% if user_signed_in? %>
      <% if current_user.id === answer.user_id %>
-   <%= answer.user.nickname%>
    <%= link_to "編集",edit_question_answer_path(@question, answer) , class:"answer-edit-btn" %>
    <%= link_to "削除",  question_answer_path(@question, answer),method: :delete, class:"answer-delete-btn"%>
       <% elsif current_user.id === @question.user_id %>
