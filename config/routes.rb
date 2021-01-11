@@ -13,5 +13,4 @@ Rails.application.routes.draw do
     resources :answers, only: [:new, :create, :edit, :update, :destroy]
   end
   resources :informations, only: :index
-
 end

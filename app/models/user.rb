@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many  :answers
 
   def self.guest
-    find_or_create_by!(email: 'guest@example.com', phone_number: '09033338888', nickname: 'guest') do |user|
+    find_or_create_by!(email: 'guest@example.com', phone_number: '09033338888', nickname: 'ゲスト') do |user|
       user.password = SecureRandom.urlsafe_base64
     end
   end
