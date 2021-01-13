@@ -1,12 +1,13 @@
 <div class="contents-row">
 <h1 class="title">
-<%= link_to "お薬相談室", root_path, class:'title'%>
+ <%= link_to "戻る", :back, class:"back" %>
 </h1>
-<div class="container">
+<div class="container-in">
+<div class="box">
 <%= form_with(model: @question, local: true) do |f|%>
   <div class="field">
-    <%= f.label :title, "題名",class: "question-title" %><br />
-    <%= f.text_field :title, class: "question-title", size:"40×5" %>
+    <%= f.label :title, "題名",class: "questions-title" %><br />
+    <%= f.text_field :title, class: "questions-title", size:"40×5" %>
   </div>
 
   <div class="field">
@@ -16,9 +17,8 @@
 
   <div class="question-btn-contents">
      <%= f.submit "編集する", class:"btn" %>
-     <%# <%= link_to "トップページに戻る", root_path, class:"back-btn" %> 
+     </div> 
   </div>
 <% end %>
 </div>
 </div>
-<%= render "shared/footer"%>

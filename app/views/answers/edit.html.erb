@@ -1,7 +1,7 @@
 <div class="contents-row">
 <h1 class="title">
-  <%= link_to "お薬相談室", root_path%>
-</h1>
+   <%= link_to "戻る", root_path, class:"back" %>
+ </h1>
 <div class="container">
    <%= form_with(model:@answer,url: question_answer_path, local: true) do |f|%>
   <div class="field">
@@ -11,7 +11,6 @@
 
   <div class="question-btn-contents">
      <%= f.submit "編集する", class:"btn" %>
-     <%= link_to "戻る", :back, class:"back-btn" %>
   </div>  
   </div>
   <% end %>

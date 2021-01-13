@@ -28,6 +28,7 @@ class QuestionsController < ApplicationController
 
   def search
     @questions = Question.search(params[:keyword])
+    @posts = @questions.count
   end
 
   def edit
