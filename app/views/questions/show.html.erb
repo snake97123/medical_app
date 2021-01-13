@@ -3,8 +3,10 @@
    <h1 class="title">
      <%= link_to "お薬相談室", root_path, class:'title'%>
    </h1>
+    
   <div class="container"> 
  <div class="question-wrapper">
+
  <% if @question.best_answer_id === @best.ids[0]%>
  <p class="question-solution">解決しました</p>
  <% end %>
@@ -37,8 +39,9 @@
   </p>
   
   </div>
-</div>
-</div>
+  </div>
+
+
 
 
   <div class="answer-lists">回答一覧
@@ -69,7 +72,7 @@
       <% end %>
    </li>
    <% end %>
- 
+</div>
    </div>
   
   

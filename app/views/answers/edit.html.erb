@@ -2,7 +2,8 @@
 <h1 class="title">
    <%= link_to "戻る", root_path, class:"back" %>
  </h1>
-<div class="container">
+<div class="container-in">
+<div class="box">
    <%= form_with(model:@answer,url: question_answer_path, local: true) do |f|%>
   <div class="field">
     <%= f.label :text, "回答", class: "answer-content" %><br />
@@ -13,5 +14,6 @@
      <%= f.submit "編集する", class:"btn" %>
   </div>  
   </div>
+  </div>
   <% end %>
-  <%= render "shared/footer"%>
+  
