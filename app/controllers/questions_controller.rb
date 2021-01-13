@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   def index
-    @questions = Question.all
+    @questions = Question.page(params[:page]).per(10).order('updated_at DESC')
     @posts = Question.all.count
   end
 
@@ -28,6 +28,7 @@ class QuestionsController < ApplicationController
 
   def search
     @questions = Question.search(params[:keyword])
+    @posts = @questions.count
   end
 
   def edit

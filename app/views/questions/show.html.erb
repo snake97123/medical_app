@@ -8,30 +8,39 @@
  <% if @question.best_answer_id === @best.ids[0]%>
  <p class="question-solution">解決しました</p>
  <% end %>
-  <ul id="question-list">
-    <li>
-    質問：
-    <%= @question.title %>
-    </li>
-    <li>
-    質問内容：
-    <%= @question.content%>
-  </ul>
+ <h1 class="question-title">
+  <%= @question.title%>
+ </h1>
+ <%# <div class="body-text"> %>
+ <p class="body-text">
+  質問内容：<%= @question.content %>
+  </p>
+ <%# </div> %>
+ <%# <div class= "question-manage"> %>
+ <p class="question-manage">
+  <% if user_signed_in? %>
+      <% if current_user.id === @question.user_id%>
+      <%= link_to edit_question_path do %>
+      <button class="btn">編集する</button>
+      <% end  %>
+      <%= link_to question_path do %>
+      <button class="btn">削除する</button>
+      <% end %>
+  
+     <% else %>
+     <%= link_to new_question_answer_path(@question.id) do %>
+     <button class="btn">回答する</button>
+     <% end %>
+   
+   <% end  %>
+  <% end %>
+  </p>
+  
   </div>
 </div>
 </div>
 
-<div class= "question-manage">
-  <% if user_signed_in? %>
-      <% if current_user.id === @question.user_id%>
-   <%= link_to "編集する", edit_question_path, class:"question_btn" %>
-   <%= link_to "削除する", question_path, method: :delete, class:"question_btn" %>
-  
-     <% else %>
-   <%= link_to "回答する", new_question_answer_path(@question.id), class:"answer_btn" %>
-   <% end  %>
-  <% end %>
-  </div>
+
   <div class="answer-lists">回答一覧
   <% @answers.each do |answer| %>
   <li class="answer-list">
@@ -41,8 +50,12 @@
    <li class="answer-list-name">
    <% if user_signed_in? %>
      <% if current_user.id === answer.user_id %>
-   <%= link_to "編集",edit_question_answer_path(@question, answer) , class:"answer-edit-btn" %>
-   <%= link_to "削除",  question_answer_path(@question, answer),method: :delete, class:"answer-delete-btn"%>
+     <%= link_to edit_question_answer_path(@question, answer) do %>
+     <button class="btn">編集する</button>
+     <% end %>
+     <%= link_to question_answer_path(@question, answer), method: :delete do %>
+     <button class="btn">削除する</button>
+     <% end %>
       <% elsif current_user.id === @question.user_id %>
       <% unless @question.best_answer_id == @best.ids[0]%>
          <%= form_with(model: @question,url: question_path, local: true) do |form|%>
@@ -56,6 +69,7 @@
       <% end %>
    </li>
    <% end %>
+ 
    </div>
-  <%= render "shared/footer" %>
+  
   

@@ -1,37 +1,38 @@
 <div class="contents-row">
-<h1 class="title">
-    <%= link_to "お薬相談室", root_path, class:"title"%>
-  </h1>
-  <div class="container">
-<h2>ログイン</h2>
+ <h1 class="title">
+   <%= link_to "戻る", root_path, class:"back" %>
+ </h1>
+  <div class="container-in">
+
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <h2>ログイン</h2>
+
      <div class='login-flash-message'>
         <%= flash[:notice] %>
         <%= flash[:alert] %>
       </div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  
-  
   <div class="field">
     <%= f.label :email, "メールアドレス" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, placeholder:"メールアドレス", autocomplete: "email" %>
   </div>
 
   <div class="field">
     <%= f.label :password, "パスワード" %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, placeholder:"パスワード", autocomplete: "current-password" %>
   </div>
 
 
 
   <div class="actions">
     <%= f.submit "ログイン", class: "btn" %>
-    <%= link_to "戻る",root_path, class: "back-btn" %>
+
   </div>
 <% end %>
 </div>
 </div>
 
 
-<%= render "shared/footer"%>
+
 
