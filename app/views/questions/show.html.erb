@@ -7,19 +7,20 @@
   <div class="container"> 
  <div class="question-wrapper">
 
- <% if @question.best_answer_id === @best.ids[0]%>
- <p class="question-solution">解決しました</p>
- <% end %>
+ 
  <h1 class="question-title">
   <%= @question.title%>
  </h1>
- <%# <div class="body-text"> %>
+
  <p class="body-text">
   質問内容：<%= @question.content %>
   </p>
- <%# </div> %>
- <%# <div class= "question-manage"> %>
+  <p class="user-nickname">
+   質問者:<%= @question.user.nickname %>
+   </p>
+
  <p class="question-manage">
+ 
   <% if user_signed_in? %>
       <% if current_user.id === @question.user_id%>
       <%= link_to edit_question_path do %>
@@ -60,15 +61,12 @@
      <button class="btn">削除する</button>
      <% end %>
       <% elsif current_user.id === @question.user_id %>
-      <% unless @question.best_answer_id == @best.ids[0]%>
-         <%= form_with(model: @question,url: question_path, local: true) do |form|%>
-     <%= form.hidden_field :best_answer_id, value: @best.ids[0] %>
+     
      <div class="action"> 
-     <%= form.submit '解決',class:"btn"%>
+      <button class="btn">解決</button>
        </div> 
        </div> 
-       <% end %>
-       <% end %>
+    
        <% end %>
       <% end %>
    </li>

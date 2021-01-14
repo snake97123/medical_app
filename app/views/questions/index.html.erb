@@ -13,13 +13,16 @@
    <% end %>
     </div>
      <% @questions.each do |question|%>
-      <li class="list">
+      <ul class="list">
          <%= link_to  "#{question.title}", question_path(question.id)  %>
-      <h1 class="question-list">
+      <li class="question-list">
+      質問者:<%= question.user.nickname %>
+      </li>
+      <li class="question-list">
            質問した日
          <%=l question.created_at %>
-      </h1>
       </li>
+      </ul>
     <% end %>
      <%= paginate @questions %>
      </div>
