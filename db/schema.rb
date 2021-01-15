@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_14_220234) do
+ActiveRecord::Schema.define(version: 2020_12_29_045223) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "text", null: false
@@ -22,22 +22,13 @@ ActiveRecord::Schema.define(version: 2021_01_14_220234) do
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
-  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "answer_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["answer_id"], name: "index_likes_on_answer_id"
-    t.index ["user_id", "answer_id"], name: "index_likes_on_user_id_and_answer_id", unique: true
-    t.index ["user_id"], name: "index_likes_on_user_id"
-  end
-
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.string "content", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "best_answer_id"
     t.index ["user_id"], name: "index_questions_on_user_id"
   end
 

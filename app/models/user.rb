@@ -12,9 +12,6 @@ class User < ApplicationRecord
 
   has_many  :questions
   has_many  :answers
-  has_many  :likes, dependent: :destroy
-  has_many  :like_answers, through: :likes, source: :answer
-
 
   def self.guest
     find_or_create_by!(email: 'guest@example.com', phone_number: '09033338888', nickname: 'guest') do |user|
