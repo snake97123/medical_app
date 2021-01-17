@@ -9,7 +9,6 @@
 }
 .mask{
   height: 100%;
-  /* background: rgba(255,255, 255, 0.15); */
 }
 
 
@@ -160,7 +159,6 @@ nav.pagination{
   font-size: 10px;
   padding-right: 20px;
   height: auto;
-  /* padding-top: 10px; */
 }
 
 .search-form{
@@ -186,7 +184,6 @@ nav.pagination{
 ========================================= */
 .top-page-fotter{
   height: 400px;
-  /* border-top: 1px solid black; */
   padding-top: 5px;
   /* background-image: url("sky_00012.png"); */
 }
@@ -232,7 +229,6 @@ nav.pagination{
 }
 
 .container{
-  /* margin: 30px 0; */
   padding: 30px;
   box-sizing: border-box;
   height: 500px;
@@ -286,13 +282,7 @@ input[type="text"]{
   border-radius: 6px;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
   box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-  /* margin: 10px, 0; */
-  /* border: none;
-  width: 110px;
-  background-color: hsl(220, 64%, 56%);
-  color: #fff; */
-  /* margin-left: 20px; */
-  /* cursor: pointer; */
+  
 }
 .back-btn:hover{
   transform: translate3d(0px,-1px,0px);
